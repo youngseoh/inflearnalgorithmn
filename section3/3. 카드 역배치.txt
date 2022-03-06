@@ -1,0 +1,19 @@
+import sys
+sys.stdin= open("input.txt","rt")
+
+
+s=[]
+for i in range(0,21):
+    s.append(i)
+
+for _ in range(10):
+    ab=list(map(int, input().split()))
+    k=s[ab[1]:ab[0]-1:-1]
+    
+    a=0
+    for i in range(ab[0], ab[1]+1):
+        s[i]=k[a]
+        a=a+1
+
+for i in range(1,len(s)):
+    print(s[i] ,end=" ")
